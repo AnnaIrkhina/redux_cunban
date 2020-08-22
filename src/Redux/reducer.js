@@ -19,7 +19,7 @@ const kanbanControlPanel = (state = initialState, action) => {
             const newState = {...state, tasks:state.tasks.filter(el=>el.id !== action.payload)};
             return newState;
         case 'addTask':
-            return {...state, tasks:[...state.tasks, {id:Math.random, name: action.payload, status: 'progress'}]}
+            return {...state, tasks:[...state.tasks, {id:Math.random(), name: action.payload, status: 'progress'}]}
         default:
             return state
     }
