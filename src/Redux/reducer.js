@@ -23,11 +23,12 @@ const kanbanControlPanel = (state = initialState, action) => {
 
         case 'saveTitleTask':
             const { title, id } = action.payload
+            console.log('saveTitleTask');
             if(!title || ! id) return state
             return {...state, tasks: state.tasks.map(task => {
                 
                 if(task.id === id) {
-                    task.status = title
+                    task.name = title
                 }
                 return task;
             })}
