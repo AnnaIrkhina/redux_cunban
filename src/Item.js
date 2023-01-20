@@ -23,7 +23,7 @@ function Item(props) {
             {
                 !editMode?               
                 <div class='item' onMouseEnter={() => setShowMenu(true)} onMouseLeave={() => setShowMenu(false)}>
-                    <div>
+                    <div onClick = {editTask}>
                         {element.name}
                     </div>
                 </div>
@@ -34,7 +34,7 @@ function Item(props) {
                 </>
             }
             {
-                sowMenu && 
+                sowMenu && !editMode &&
                 <div class="menu" onMouseEnter={() => setShowMenu(true)} onMouseLeave={() => setShowMenu(false)}>
                     {element.status !== 'todo' && <button onClick={() => props.moveRight(element.id)}>Right</button>}
                     {element.status !== 'done' && <button onClick={() => props.moveLeft(element.id)}>Left</button>}

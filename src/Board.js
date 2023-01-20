@@ -9,8 +9,8 @@ function Board(props) {
 
     const[title, setTitle] = useState('')
     const addClick = ()=>{
-        props.addTask(title)
-            setTitle('')
+        title && props.addTask(title)
+        setTitle('')
     }
     return (
         <div className="App">
